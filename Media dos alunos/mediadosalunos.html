@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Media e Soma De Numeros</title>
+</head>
+<body id="body">
+    <h1> Media Dos Alunos</h1>
+
+    <script>
+        //Imput
+        var nomealuno1 = String (window.prompt("Digite O Nome Do Aluno(a):"))
+        var number1 = Number(window.prompt("Digite a nota das Atividades (de 0 a 10)"))
+        var number2 = Number(window.prompt("Digite a nota do Teste (de 0 a 10)"))
+        var number3 = Number(window.prompt("Digite a nota da Prova Final (de 0 a 10)"))
+        //Calculos 
+        var soma = number1 + number2 + number3
+        const media = soma / 3
+        const mediafinal = media.toFixed(2)
+        if (media>=7) {var aprovadoreprovado = "Aprovado"}
+        else {var aprovadoreprovado = "Reprovado"}
+        //Output
+        var table = `<table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome Do Aluno</th>
+            <th scope="col">Atividas</th>
+            <th scope="col">Teste</th>
+            <th scope="col">Nota Da Prova</th>
+            <th scope="col">Nota Final</th>
+            <th scope="col">Media</th>
+            <th scope="col">Situação</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>${nomealuno1}</td>
+            <td>${number1}</td>
+            <td>${number2}</td>
+            <td>${number3}</td>
+            <td>${soma}</td>
+            <td>${mediafinal}</td>
+            <td>${aprovadoreprovado}</td>
+          </tr>
+        </tbody>
+      </table> `
+        var body = document.getElementById("body") 
+        //Mensagens De Saida
+        var div = document.createElement("div")
+        div.innerHTML = table
+        body.appendChild(div)
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
